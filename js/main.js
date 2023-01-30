@@ -28,7 +28,7 @@ function game({ choices, roundsLeft }) {
     let computerScore = 0;
     while (roundsLeft > 0) {
         let playerSelection = prompt(`Enter your choice (rock, paper, scissors): ( You have ${roundsLeft} rounds left).`);
-        if (["rock", "paper", "scissors"].includes(playerSelection.toLowerCase())) {
+        if (["rock", "paper", "scissors"].includes(playerSelection.toLowerCase().trim(" "))) {
             let computerSelection = computerPlay({ choices })
             let result = playRound(playerSelection, computerSelection);
             if (result.startsWith("You Win")) {
@@ -45,6 +45,10 @@ function game({ choices, roundsLeft }) {
             alert("Invalid choice. Please enter 'rock', 'paper', or 'scissors'.")
         }
     }
+    displayWinner(playerScore, computerScore);
+}
+
+function displayWinner(playerScore, computerScore) {
     if (playerScore > computerScore) {
         alert(`CONGRATULATIONS! 🎉 YOU WON THE GAME.\nFinal Score: You ${playerScore} - Computer ${computerScore}\n You can refresh the page to play again.`);
     } else if (playerScore < computerScore) {
