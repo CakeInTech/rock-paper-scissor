@@ -27,18 +27,18 @@ function game({ choices, roundsLeft }) {
     let playerScore = 0;
     let computerScore = 0;
     while (roundsLeft > 0) {
-        let playerSelection = prompt(`Enter your choice (rock, paper, scissors): ( You have ${roundsLeft} rounds left).\n Click ok to go to the next round`);
+        let playerSelection = prompt(`Enter your choice (rock, paper, scissors): ( You have ${roundsLeft} rounds left).`);
         if (["rock", "paper", "scissors"].includes(playerSelection.toLowerCase())) {
             let computerSelection = computerPlay({ choices })
             let result = playRound(playerSelection, computerSelection);
             if (result.startsWith("You Win")) {
                 playerScore++;
-                alert(`Congrats! ${result}.`);
+                alert(`Congrats! ${result}\n Click ok to go to the next round.`);
             } else if (result.startsWith("You Lose")) {
                 computerScore++;
-                alert(`Sorry! ${result}.`);
+                alert(`Sorry! ${result}\n Click ok to go to the next round.`);
             } else {
-                alert(`It's a ${result}.`);
+                alert(`It's a ${result}\n Click ok to go to the next round.`);
             }
             roundsLeft--;
         } else {
