@@ -46,11 +46,11 @@ function game({ choices, roundsLeft }) {
         }
     }
     if (playerScore > computerScore) {
-        alert(`Congratulations! You won the game.\nFinal Score: You ${playerScore} - Computer ${computerScore}\n You can refresh the page to play again.`);
+        alert(`CONGRATULATIONS! 🎉 YOU WON THE GAME.\nFinal Score: You ${playerScore} - Computer ${computerScore}\n You can refresh the page to play again.`);
     } else if (playerScore < computerScore) {
-        alert(`Sorry! You lost the game.\nFinal Score: You ${playerScore} - Computer ${computerScore}\n You can refresh the page to play again`);
+        alert(`SORRY! YOU LOST THE GAME.😁\nFinal Score: You ${playerScore} - Computer ${computerScore}\n You can refresh the page to play again`);
     } else {
-        alert(`It's a tie!\nFinal Score: You ${playerScore} - Computer ${computerScore}\n You can refresh the page to play again`);
+        alert(`IT'S A TIE!😯\nFinal Score: You ${playerScore} - Computer ${computerScore}\n You can refresh the page to play again`);
     }
 }
 
