@@ -27,7 +27,7 @@ function game({ choices, roundsLeft }) {
     let playerScore = 0;
     let computerScore = 0;
     while (roundsLeft > 0) {
-        let playerSelection = prompt(`Enter your choice (rock, paper, scissors): ( You have ${roundsLeft} rounds left.`);
+        let playerSelection = prompt(`Enter your choice (rock, paper, scissors): ( You have ${roundsLeft} rounds left).`);
         if (["rock", "paper", "scissors"].includes(playerSelection.toLowerCase())) {
             let computerSelection = computerPlay({ choices })
             let result = playRound(playerSelection, computerSelection);
@@ -54,5 +54,5 @@ function game({ choices, roundsLeft }) {
     }
 }
 
-alert('You have 5 rounds to play against the computer. :") ')
+alert('You have 5 rounds to play against the computer so Goodluck!🤞. :")')
 game(gameData)
