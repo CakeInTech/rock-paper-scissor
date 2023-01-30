@@ -24,19 +24,20 @@ function playRound(playerSelection, computerSelection) {
 
 function playerSelection(gameData) {
     let playerSelection = prompt(
-        `Enter your choice (rock, paper, scissors): ( You have ${gameData} rounds left).`
+      `Enter your choice (rock, paper, scissors): ( You have ${gameData} rounds left).`
     );
     if (!playerSelection) {
-        if (confirm("Oh no you haven't finished the game, do you want to leave?")) {
-            return;
-        }
+      if (confirm("Oh no you haven't finished the game, do you want to leave?")) {
+        return;
+      }
     } else if (["rock", "paper", "scissors"].includes(playerSelection.toLowerCase().trim())) {
-        return playerSelection.toLowerCase().trim();
+      return playerSelection.toLowerCase().trim();
     } else {
-        alert("Invalid choice. Please enter 'rock', 'paper', or 'scissors'.");
-        return playerSelection();
+      alert("Invalid choice. Please enter 'rock', 'paper', or 'scissors'.");
     }
-}
+    return playerSelection(gameData);
+  }
+  
 
 function game({ choices, roundsLeft }) {
     let playerScore = 0;
