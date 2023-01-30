@@ -32,7 +32,7 @@ function game({ choices, roundsLeft }) {
             if (confirm("Oh no you haven't finished the game, do you want to leave?")) {
                 return;
             }
-        } else if (["rock", "paper", "scissors"].includes(playerSelection.toLowerCase())) {
+        } else if (["rock", "paper", "scissors"].includes(playerSelection.toLowerCase().trim(" "))) {
             let computerSelection = computerPlay({ choices });
             let result = playRound(playerSelection, computerSelection);
             if (result.startsWith("You Win")) {
