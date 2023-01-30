@@ -28,22 +28,22 @@ function game({ choices, roundsLeft }) {
     let computerScore = 0;
     while (roundsLeft > 0) {
         let playerSelection = prompt("Enter your choice (rock, paper, scissors): ");
-        if (!["rock", "paper", "scissors"].includes(playerSelection.toLowerCase())) {
-            alert("Invalid choice. Please enter 'rock', 'paper', or 'scissors'.")
-            continue;
-        }
-        let computerSelection = computerPlay({ choices })
-        let result = playRound(playerSelection, computerSelection);
-        if (result.startsWith("You Win")) {
-            playerScore++;
-            alert(`Congrats! ${result} you have ${roundsLeft} rounds left.`);
-        } else if (result.startsWith("You Lose")) {
-            computerScore++;
-            alert(`Sorry! ${result} you have ${roundsLeft} rounds left.`);
+        if (["rock", "paper", "scissors"].includes(playerSelection.toLowerCase())) {
+            let computerSelection = computerPlay({ choices })
+            let result = playRound(playerSelection, computerSelection);
+            if (result.startsWith("You Win")) {
+                playerScore++;
+                alert(`Congrats! ${result} you have ${roundsLeft} rounds left.`);
+            } else if (result.startsWith("You Lose")) {
+                computerScore++;
+                alert(`Sorry! ${result} you have ${roundsLeft} rounds left.`);
+            } else {
+                alert(`It's a ${result} you have ${roundsLeft} rounds left.`);
+            }
+            roundsLeft--;
         } else {
-            alert(`It's a ${result} you have ${roundsLeft} rounds left.`);
+            alert("Invalid choice. Please enter 'rock', 'paper', or 'scissors'.")
         }
-        roundsLeft--;
     }
     if (playerScore > computerScore) {
         alert("Congratulations! You won the game.\nFinal Score: You " + playerScore + " - Computer " + computerScore);
