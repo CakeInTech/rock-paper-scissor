@@ -28,8 +28,12 @@ function game({ choices, roundsLeft }) {
     let computerScore = 0;
     while (roundsLeft > 0) {
         let playerSelection = prompt(`Enter your choice (rock, paper, scissors): ( You have ${roundsLeft} rounds left).`);
-        if (["rock", "paper", "scissors"].includes(playerSelection.toLowerCase().trim(" "))) {
-            let computerSelection = computerPlay({ choices })
+        if (!playerSelection) {
+            if (confirm("Oh no you haven't finished the game, do you want to leave?")) {
+                return;
+            }
+        } else if (["rock", "paper", "scissors"].includes(playerSelection.toLowerCase())) {
+            let computerSelection = computerPlay({ choices });
             let result = playRound(playerSelection, computerSelection);
             if (result.startsWith("You Win")) {
                 playerScore++;
