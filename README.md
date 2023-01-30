@@ -2,7 +2,7 @@
 A little fun game where you go against the computer. :")
 
 ### Live Preview
-[Incomming!]()
+[Here](https://mohamedck.github.io/rock-paper-scissor/) 😊
 
 
 ### Game Flowchart
