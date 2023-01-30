@@ -54,5 +54,6 @@ function game({ choices, roundsLeft }) {
     }
 }
 
-alert('You have 5 rounds to play against the computer so Goodluck!🤞. :")')
+alert('Hello there, Welcome to the game!')
+alert('You have 5 rounds to play against the computer so Goodluck!🤞 :")')
 game(gameData)
